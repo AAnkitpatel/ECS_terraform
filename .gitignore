@@ -1,0 +1,26 @@
+# Ignore Terraform files
+**/.terraform/*
+*.tfstate
+*.tfstate.backup
+*.tfplan
+terraform.tfstate
+terraform.tfstate.backup
+.terraformrc
+.terraform.lock.hcl
+.terraformignore
+
+# Ignore any .tfvars files that are not in the examples subdirectory.
+# This helps keep sensitive credential information from being included in your Terraform repository.
+#
+# You can customize the glob pattern to match your naming conventions for .tfvars files.
+# For example, "*.auto.tfvars" will ignore files ending in ".auto.tfvars".
+#
+# These files are for defining variable values and should not be stored in version control.
+#
+# **/*.tfvars          # Include all .tfvars files in subdirectories
+# !examples/**/*.tfvars  # Except those in the examples subdirectory
+#
+# The ! prefix on the second pattern negates it, so files matching the pattern will not be ignored.
+
+**/*.tfvars
+!examples/**/*.tfvars
